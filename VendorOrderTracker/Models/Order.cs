@@ -39,5 +39,10 @@ namespace VendorOrderTracker.Models
     {
       _idCount = 0;
     }
+
+    public static Order Find(int id)
+    {
+      return _instances[id];
+    }
   }
 }
