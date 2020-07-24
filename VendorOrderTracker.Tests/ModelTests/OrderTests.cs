@@ -53,7 +53,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetPrice_ReturnsPrice_Int()
     {
-      string testPrice = 100;
+      int testPrice = 100;
       Order newOrder = new Order ("some title", "some description", testPrice);
       Assert.AreEqual(testPrice, newOrder.Price);
     }
@@ -61,9 +61,9 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void SetPrice_SetsPrice_Int()
     {
-      string testPrice = 100;
+      int testPrice = 100;
       Order newOrder = new Order("some title", "some description", testPrice);
-      string testNewPrice = 200;
+      int testNewPrice = 200;
       newOrder.Price = testNewPrice;
       Assert.AreEqual(testNewPrice, newOrder.Price);
     }
