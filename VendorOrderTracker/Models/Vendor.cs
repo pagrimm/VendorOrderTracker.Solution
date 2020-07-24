@@ -7,18 +7,32 @@ namespace VendorOrderTracker.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public List<Order> OrderList { get; }
+    public int Id { get; }
     private static List<Vendor> _instances = new List<Vendor> {};
+    private static int _idCount = 0;
     public Vendor(string name, string description)
     {
       Name = name;
       Description = description;
       OrderList = new List<Order>{};
+      Id = _idCount;
+      _idCount ++;
       _instances.Add(this);
     }
 
     public static List<Vendor> GetAll()
     {
       return _instances;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
+    public static void ClearIdCount()
+    {
+      _idCount = 0;
     }
   }
 }
