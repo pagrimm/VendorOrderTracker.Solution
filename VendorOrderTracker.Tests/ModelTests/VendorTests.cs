@@ -11,7 +11,7 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor();
+      Vendor newVendor = new Vendor("some name", "some description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -27,7 +27,7 @@ namespace VendorOrderTracker.Tests
     public void SetName_SetsName_String()
     {
       string testName = "testName";
-      Vendor newVendor = new Vendor(testName);
+      Vendor newVendor = new Vendor(testName, "some description");
       string testNewName = "testNewName";
       newVendor.Name = testNewName;
       Assert.AreEqual(testNewName, newVendor.Name);
