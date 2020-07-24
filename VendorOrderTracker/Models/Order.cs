@@ -19,5 +19,10 @@ namespace VendorOrderTracker.Models
       Date = DateTime.Parse(date);
       _instances.Add(this);
     }
+
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
   }
 }
