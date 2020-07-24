@@ -97,5 +97,12 @@ namespace VendorOrderTracker.Tests
       Order newOrder = new Order("some title", "some description", 100, "2020-07-09");
       Assert.AreEqual(typeof(List<Order>), Order.GetAll().GetType());
     }
+
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      Order newOrder = new Order("some title", "some description", 100, "2020-07-09");
+      Assert.AreEqual(0, newOrder.Id);
+    }
   }
 }
