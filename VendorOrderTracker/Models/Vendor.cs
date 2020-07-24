@@ -40,5 +40,10 @@ namespace VendorOrderTracker.Models
     {
       return _instances[id];
     }
+
+    public static void Delete(int id)
+    {
+      _instances.Remove(id);
+    }
   }
 }
