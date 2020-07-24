@@ -7,7 +7,7 @@ namespace VendorOrderTracker.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
-    public List<Order> OrderList { get; }
+    public List<Order> OrderList { get; set; }
     public int Id { get; }
     private static Dictionary<int, Vendor> _instances = new Dictionary<int, Vendor> {};
     private static int _idCount = 0;
@@ -48,13 +48,14 @@ namespace VendorOrderTracker.Models
 
     public void AddOrder(Order inputOrder)
     {
+      inputOrder.VendorName = Name;
+      inputOrder.VendorId = Id;
       OrderList.Add(inputOrder);
     }
 
     public void RemoveOrder(Order inputOrder)
     {
-      OrderList.Remove(inputOrder);
-      Order.Delete(inputOrder.Id);
+      Order.Remove(inputOrder.Id);
     }
   }
 }

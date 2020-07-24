@@ -11,6 +11,8 @@ namespace VendorOrderTracker.Models
     public int Price { get; set; }
     public DateTime Date { get; set; }
     public int Id { get; }
+    public string VendorName { get; set;}
+    public int VendorId { get; set; }
     private static Dictionary<int, Order> _instances = new Dictionary<int, Order> {};
     private static int _idCount = 0;
     
@@ -21,6 +23,8 @@ namespace VendorOrderTracker.Models
       Price = price;
       Date = DateTime.Parse(date);
       Id = _idCount;
+      VendorName = null;
+      VendorId = -1;
       _idCount ++;
       _instances.Add(Id, this);
     }
@@ -45,8 +49,12 @@ namespace VendorOrderTracker.Models
       return _instances[id];
     }
 
-    public static void Delete(int id)
+    public static void Remove(int id)
     {
+      if (_instances[id].VendorId != -1)
+      {
+        Vendor.Find(_instances[id].VendorId).OrderList.Remove(_instances[id]);
+      }
       _instances.Remove(id);
     }
   }

@@ -119,11 +119,11 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
-    public void Delete_DeletesOrderById_Order()
+    public void Remove_RemovesOrderById_Order()
     {
       Order newOrder = new Order("some title", "some description", 100, "2020-07-09");
       Assert.AreEqual(1, Order.GetAll().Count);
-      Order.Delete(0);
+      Order.Remove(0);
       Assert.AreEqual(0, Order.GetAll().Count);
     }
   }
