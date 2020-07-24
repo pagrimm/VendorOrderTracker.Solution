@@ -4,17 +4,22 @@
   Layout = "_Layout";
 }
 
-<section class="card">
-  <div class="card-header">
-    @Model.Title
-  </div>
-  <div class="card-body">
-    <div class="card-text">
-      <p>Order Description: @Model.Description</p>
-      <p>Order Price: @Model.Price</p>
-      <p>Order Date: @Model.Date</p>
-      <p>Order ID: @Model.Id</p>
-      <p>Vendor Name: @Model.VendorName</p>
+@foreach (Order order in Model)
+{
+  <section class="card">
+    <div class="card-header">
+      @order.Title
     </div>
-  </div>
-</section>  
+    <div class="card-body">
+      <div class="card-text">
+        <p>Order Description: @order.Description</p>
+        <p>Order Price: @order.Price</p>
+        <p>Order Date: @order.Date</p>
+        <p>Order ID: @order.Id</p>
+        <p>Vendor Name: @order.VendorName</p>
+      </div>
+    </div>
+  </section>  
+}
+
+
