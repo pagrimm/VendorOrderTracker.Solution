@@ -84,5 +84,14 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor = new Vendor("some name", "some description");
       Assert.AreEqual(newVendor, Vendor.Find(0));
     }
+
+    [TestMethod]
+    public void Delete_DeletesVendorById_Vendor()
+    {
+      Vendor newVendor = new Vendor("some name", "some description");
+      Assert.AreEqual(1, Vendor.GetAll().Count);
+      Vendor.Delete(0);
+      Assert.AreEqual(0, Vendor.GetAll().Count);
+    }
   }
 }
