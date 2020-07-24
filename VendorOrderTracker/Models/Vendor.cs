@@ -45,5 +45,10 @@ namespace VendorOrderTracker.Models
     {
       _instances.Remove(id);
     }
+
+    public void AddOrder(Order inputOrder)
+    {
+      OrderList.Add(inputOrder);
+    }
   }
 }

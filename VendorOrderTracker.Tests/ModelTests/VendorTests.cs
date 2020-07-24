@@ -103,5 +103,16 @@ namespace VendorOrderTracker.Tests
       newVendor.AddOrder(newOrder);
       Assert.AreEqual(1, newVendor.OrderList.Count);
     }
+
+    [TestMethod]
+    public void RemoveOrder_RemovesOrderObjectFromOrderList_Order()
+    {
+      Vendor newVendor = new Vendor("some name", "some description");
+      Order newOrder = new Order("some title", "some description", 100, "2020-07-09");
+      newVendor.AddOrder(newOrder);
+      Assert.AreEqual(1, newVendor.OrderList.Count);
+      newVendor.RemoveOrder(newOrder);
+      Assert.AreEqual(0, newVendor.OrderList.Count);
+    }
   }
 }
