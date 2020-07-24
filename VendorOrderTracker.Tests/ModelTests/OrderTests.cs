@@ -90,5 +90,12 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(12, newOrder.Date.Month);
       Assert.AreEqual(31, newOrder.Date.Day);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_List()
+    {
+      Order newOrder = new Order("some title", "some description", 100, "2020-07-09");
+      Assert.AreEqual(typeof(List<Order>), Order.GetAll().GetType());
+    }
   }
 }

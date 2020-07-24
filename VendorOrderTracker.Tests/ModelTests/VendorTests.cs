@@ -57,5 +57,12 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor = new Vendor("some name", "some description");
       Assert.AreEqual(typeof(List<Order>), newVendor.OrderList.GetType());
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_List()
+    {
+      Vendor newVendor = new Vendor("some name", "some description");
+      Assert.AreEqual(typeof(List<Vendor>), Vendor.GetAll().GetType());
+    }
   }
 }
