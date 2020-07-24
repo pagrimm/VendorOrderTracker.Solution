@@ -11,12 +11,12 @@ namespace VendorOrderTracker.Models
     public DateTime Date { get; set; }
     private static List<Order> _instances = new List<Order> { };
     
-    public Order(string title, string description, int price)
+    public Order(string title, string description, int price, string date)
     {
       Title = title;
       Description = description;
       Price = price;
-      Date = DateTime.Now;
+      Date = DateTime.Parse(date);
       _instances.Add(this);
     }
   }
