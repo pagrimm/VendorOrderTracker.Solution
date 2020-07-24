@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace VendorOrderTracker.Models
@@ -10,7 +11,7 @@ namespace VendorOrderTracker.Models
     public int Price { get; set; }
     public DateTime Date { get; set; }
     public int Id { get; }
-    private static List<Order> _instances = new List<Order> { };
+    private static Dictionary<int, Order> _instances = new Dictionary<int, Order> {};
     private static int _idCount = 0;
     
     public Order(string title, string description, int price, string date)
@@ -21,12 +22,12 @@ namespace VendorOrderTracker.Models
       Date = DateTime.Parse(date);
       Id = _idCount;
       _idCount ++;
-      _instances.Add(this);
+      _instances.Add(Id, this);
     }
 
     public static List<Order> GetAll()
     {
-      return _instances;
+      return _instances.Values.ToList();
     }
 
     public static void ClearAll()
