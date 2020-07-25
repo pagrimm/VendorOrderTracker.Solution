@@ -9,14 +9,10 @@
   <div class="card-body">
     <h5 class="card-title">Enter your order information</h5>
     <div class="card-text">
-      <form action="vendors/@Model.Id/orders" method="post">
+      <form action="/vendors/@Model.Id/orders" method="post">
         <div class="form-group">
           <label for="orderTitle">Order title</label>
           <input type="text" id="orderTitle" name="orderTitle" class="form-control" placeholder="Enter order title">
-        </div>
-        <div class="form-group">
-          <label for="orderDescription">Order description</label>
-          <input type="text" id="orderDescription" name="orderDescription" class="form-control" placeholder="Enter order description">
         </div>
         <div class="form-group">
           <label for="orderDescription">Order description</label>

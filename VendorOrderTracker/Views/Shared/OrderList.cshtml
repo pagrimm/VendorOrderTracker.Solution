@@ -1,0 +1,10 @@
+@using VendorOrderTracker.Models;
+
+@if (Model.OrderList.Count == 0)
+{
+  <p>There are no orders to display, please add an order.</p>
+}
+@foreach (Order order in Model.OrderList)
+{
+  <div><a href="/orders/@order.Id">@order.Title</a></div>
+}

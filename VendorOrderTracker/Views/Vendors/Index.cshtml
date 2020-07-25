@@ -1,3 +1,28 @@
+@using VendorOrderTracker.Models;
+
 @{
   Layout = "_Layout";
+}
+@if (Model.Count == 0)
+{
+  <p>There are no vendors to display, please add a vendor.</p>
+}
+@foreach (Vendor vendor in Model)
+{
+  <section class="card mb-3">
+    <div class="card-header">
+      @vendor.Name
+    </div>
+    <div class="card-body">
+      <div class="card-text">
+        <h5 class="card-title">Vendor Description</h5>
+        <p>@vendor.Description</p>
+        <h5 class="card-title">Order Details</h5>
+        @Html.Partial("OrderList", vendor)
+        <form action="/vendors/@vendor.Id/orders/new" method="get">
+          <button type="submit" class="btn btn-primary mt-3">Add new order</button>
+        </form>
+      </div>
+    </div>
+  </section>  
 }
