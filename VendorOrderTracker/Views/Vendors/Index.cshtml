@@ -11,7 +11,12 @@
 {
   <section class="card mb-3">
     <div class="card-header">
-      @vendor.Name
+      <div class="cardListName">@vendor.Name</div>
+      <div class="cardListButton">
+        <form action="/vendors/@vendor.Id" method="post">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
     </div>
     <div class="card-body">
       <div class="card-text">

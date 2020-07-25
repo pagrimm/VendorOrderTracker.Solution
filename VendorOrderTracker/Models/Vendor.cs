@@ -43,6 +43,11 @@ namespace VendorOrderTracker.Models
 
     public static void Delete(int id)
     {
+      Vendor toDelete = Vendor.Find(id);
+      foreach(Order order in toDelete.OrderList)
+      {
+        Order.Remove(order.Id);
+      }
       _instances.Remove(id);
     }
 
@@ -55,6 +60,7 @@ namespace VendorOrderTracker.Models
 
     public void RemoveOrder(Order inputOrder)
     {
+      OrderList.Remove(inputOrder);
       Order.Remove(inputOrder.Id);
     }
   }

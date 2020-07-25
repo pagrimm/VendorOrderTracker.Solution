@@ -51,10 +51,6 @@ namespace VendorOrderTracker.Models
 
     public static void Remove(int id)
     {
-      if (_instances[id].VendorId != -1)
-      {
-        Vendor.Find(_instances[id].VendorId).OrderList.Remove(_instances[id]);
-      }
       _instances.Remove(id);
     }
   }

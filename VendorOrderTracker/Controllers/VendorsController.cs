@@ -25,5 +25,12 @@ namespace VendorOrderTracker.Controllers
       Vendor inputVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
+
+    [HttpPost("/vendors/{id}")]
+    public ActionResult Destroy(int id)
+    {
+      Vendor.Delete(id);
+      return RedirectToAction("Index");
+    }
   }
 }
