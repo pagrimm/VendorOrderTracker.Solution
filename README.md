@@ -16,24 +16,26 @@ Back-End
 
 Front-End
 * The homepage of the app at the root path is a splash page welcoming and providing a link to a vendors page
-* Can click a vendor's name and go to a new page that will display all of that vendor's orders
+* Can navigate to a page with a form to create a new Vendor
 * Can navigate to a page with a form to create a new Order for a particular vendor
-
+* Can see all vendors displayed
+* Orders for each vendor are displayed
+* Can click on orders to display details
 
 ## Setup/Installation Requirements
 
-* .NET Core 2.2 will need to be installed if it isn't already, it can be found here https://dotnet.microsoft.com/download/dotnet-core/2.2
-* Check out the repository using `git clone ` in your terminal
+* .NET Core 2.2 will need to be installed, it can be found here https://dotnet.microsoft.com/download/dotnet-core/2.2
+* Check out the repository using `git clone https://github.com/pagrimm/VendorOrderTracker.Solution.git` in your terminal
 * Navigate to the newly created `VendorOrderTracker.Solution` folder
-* Navigate to both the `VendorOrderTracker` subfolder and run `dotnet restore`
+* Navigate to the `VendorOrderTracker` subfolder and run `dotnet restore`
 * Run `dotnet build` to build the app and `dotnet run` to run it
 * The web app will now be available on `http://localhost:5000/` in your browser
 
 ## Technologies Used
 
-C#
-.NET Core 2.2
-ASP.NET Core MVC
+C#  
+.NET Core 2.2  
+ASP.NET Core MVC  
 
 ## Legal
 
