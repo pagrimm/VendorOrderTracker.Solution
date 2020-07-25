@@ -10,9 +10,11 @@ Weekly project independent for Epicodus, an MVC application to help track the ve
 Back-End
 * Can create vendor objects with properties for vendor name, description, list of orders, id
 * Can create order objects with properties for title, description, price, date, id
-* Can add orders to vendors
+* Ids are assigned to orders and vendors on creation
 * Can find orders and vendors by id
+* Can add orders to vendors
 * Can get a list of all vendors and orders
+* Can get a list of all orders belonging to a specific vendor
 
 Front-End
 * The homepage of the app at the root path is a splash page welcoming and providing a link to a vendors page
